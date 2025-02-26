@@ -17,15 +17,10 @@ class _ArticleListviewState extends State<ArticleListview> {
     return BlocBuilder<AppCubit, AppState>(
       builder: (context, state) {
         if (state is LoadedState) {
-          return SliverList(
-            delegate: SliverChildBuilderDelegate(
-              (context, index) {
-                return ArticleItem(
-                  m: state.x[index],
-                );
-              },
-              childCount: state.x.length,
-            ),
+          return SliverList.builder(itemBuilder: (context, index) {
+            return ArticleItem(articleModel: state.x[index]);
+            }, 
+            itemCount: state.x.length,
           );
         } else if (state is ErrorState) {
           return SliverToBoxAdapter(

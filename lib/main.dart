@@ -8,13 +8,11 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  
-   MyApp({super.key});
-   
+  MyApp({super.key});
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) =>AppCubit()..getNews(),
+      create: (context) => AppCubit()..getNews(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         home: HomeScreen(),

@@ -14,14 +14,14 @@ class CategoryItem extends StatelessWidget {
             Navigator.push(
             context,
             MaterialPageRoute(
-              builder: (context) => DetailsScreen(id: category.id, name: category.name, color: category.color, api: category.widget, image: category.image,),
+              builder: (context) => DetailsScreen( name: category.name, color: category.color, widget: category.widget, image: category.image,),
             ),
           );
           },
           child: CircleAvatar(
             radius: 55,
             backgroundImage:AssetImage(category.image),
-            child: Center(child: Text(category.name , style: TextStyle(color: Colors.black , fontWeight: FontWeight.bold),)),
+            child: Center(child: Text(category.name , style: TextStyle(color: Colors.white , fontWeight: FontWeight.bold),)),
           ),
         ),
       );

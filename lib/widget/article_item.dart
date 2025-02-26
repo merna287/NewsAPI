@@ -3,8 +3,8 @@ import 'package:new_test/model/article.dart';
 import 'package:new_test/widget/expadable_text.dart';
 
 class ArticleItem extends StatelessWidget {
-  final Article m;
-  const ArticleItem({super.key, required this.m});
+  final Article articleModel;
+  const ArticleItem({super.key, required this.articleModel});
 
   @override
   Widget build(BuildContext context) {
@@ -21,7 +21,7 @@ class ArticleItem extends StatelessWidget {
                   BorderRadiusDirectional.vertical(top: Radius.circular(40)),
               image: DecorationImage(
                 image: NetworkImage(
-                    m.image?? "https://cdn.pixabay.com/photo/2025/02/09/17/58/cycling-9394894_1280.jpg"),
+                    articleModel.image?? "https://cdn.pixabay.com/photo/2025/02/09/17/58/cycling-9394894_1280.jpg"),
                 fit: BoxFit.fill,
               ),
             ),
@@ -31,11 +31,11 @@ class ArticleItem extends StatelessWidget {
           ),
           ExpadableText(
               text:
-                  m.name,
+                  articleModel.name?? "No Text",
               isDescription: false),
           ExpadableText(
               text:
-                  m.desc ?? "No description",
+                  articleModel.desc ?? "No description",
               isDescription: true),
           SizedBox(
             height: 6,

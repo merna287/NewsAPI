@@ -12,6 +12,4 @@ class ApiService {
     return response.data;
   }
 }
-void main(List<String> args) {
-  
-}
+ 
